@@ -1,0 +1,46 @@
+! ============================
+! ============ SResidentes============
+! ============================
+
+enable
+config t
+hostname SResidentes
+
+no ip domain-lookup
+
+enable password class
+
+line con 0
+password cisco
+login
+logging sync
+
+line vty 0 15
+password cisco
+login
+logging sync
+
+int vlan1
+ip address 172.16.56.254 255.255.255.0
+no shut
+
+ip default-gateway 172.16.57.222
+
+banner motd #
+||===========================================||
+||	       				                     ||
+|| Bienvenido al equipo SResidentes          ||
+||     					                     ||
+||					                         ||
+|| Estas entrando a un equipo protegido.     ||
+||     					                     ||
+|| Si decides continuar puedes ser sujeto    ||
+|| a investigación.	       		             ||
+||		       			                     ||
+|| atte. soporteti@tec.mx              	     ||
+||	       				                     ||
+||===========================================||
+#
+
+! ENCRIPTAR CONTRASEÑAS
+service password-encryption

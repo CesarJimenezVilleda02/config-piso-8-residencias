@@ -1,0 +1,42 @@
+! ============================
+! ============ SPP08 ============
+! ============================
+
+enable
+config t
+hostname SPP08
+
+no ip domain-lookup
+
+enable password class
+
+line con 0
+password cisco
+login
+logging sync
+
+line vty 0 15
+password cisco
+login
+logging sync
+
+ip default-gateway 
+
+banner motd #
+||===========================================||
+||	       				                     ||
+|| Bienvenido al equipo SPP08                ||
+||     					                     ||
+||					                         ||
+|| Estas entrando a un equipo protegido.     ||
+||     					                     ||
+|| Si decides continuar puedes ser sujeto    ||
+|| a investigación.	       		             ||
+||		       			                     ||
+|| atte. soporteti@tec.mx              	     ||
+||	       				                     ||
+||===========================================||
+#
+
+! ENCRIPTAR CONTRASEÑAS
+service password-encryption

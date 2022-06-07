@@ -1,0 +1,67 @@
+! ============================
+! ========= RFrontera ========
+! ============================
+enable
+config t
+
+hostname RFrontera
+
+no ip domain-lookup
+
+enable password class
+
+! CONFIGURACIÓN DE CONEXIONES
+line con 0
+password cisco
+login
+logging sync
+
+line vty 0 4
+password cisco
+login
+logging sync
+
+! CONFIGURACIÓN DE DHCP
+ip dhcp excluded-address –.–.--.--
+ip dhcp pool Residentes
+network 172.16.56.0 255.255.255.0
+default-router –.–.--.--
+dns-server –.–.--.--
+
+ip dhcp excluded-address —.---.---.---
+ip dhcp pool Visitantes
+network 172.16.57.0 255.255.255.128
+default-router —.---.---.---
+dns-server —.---.---.---
+
+! CONFIGURACIÓN DE INTERFACES
+int g0/0 
+ip address 192.168.80.254 255.255.255.252
+no shut
+
+int s0/1/0
+ip address 192.168.255.226 255.255.255.252
+no shut
+
+int g0/1
+ip address 172.16.57.222 255.255.255.240
+no shut
+! CONFIGURACIÓN DE BANNER
+banner motd banner motd #
+||===========================================||
+||	       				                     ||
+|| Bienvenido al equipo RFrontera            ||
+||     					                     ||
+||					                         ||
+|| Estas entrando a un equipo protegido.     ||
+||     					                     ||
+|| Si decides continuar puedes ser sujeto    ||
+|| a investigación.	       		             ||
+||		       			                     ||
+|| atte. soporteti@tec.mx              	     ||
+||	       				                     ||
+||===========================================||
+#
+
+! ENCRIPTAR CONTRASEÑAS
+service password-encryption
