@@ -7,7 +7,7 @@ hostname RFrontera
 no ip domain-lookup
 
 ! CONFIGURACIÓN DE BANNER
-banner motd banner motd #
+banner motd #
 ||===========================================||
 ||	       				                     ||
 || Bienvenido al equipo RFrontera            ||
