@@ -28,8 +28,6 @@ login local
 logging sync
 exit
 
-login block-for 30 attempts 2 within 120
-
 banner motd #
 ||===========================================||
 ||	       				                     ||
