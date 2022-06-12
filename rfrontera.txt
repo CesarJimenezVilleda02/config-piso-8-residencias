@@ -1,7 +1,5 @@
 enable
-
-clock set 13:00:00 Jun 2022
-
+clock set 13:00:00 Jun 12 2022
 config t
 
 hostname RFrontera
