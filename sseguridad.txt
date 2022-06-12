@@ -55,13 +55,13 @@ vlan 400
 name Seguridad
 
 ! Asignación de puertos de Seguridad
-int range f0/1-24
+int range f0/1-24, g0/1
 switchport mode access
 switchport access vlan 400
 
 int vlan 1
 desc Interfaz de VLAN Switch Seguridad
-ip address 172.16.56.215 255.255.255.240
+ip address 172.16.57.215 255.255.255.240
 no shut
 
 ip default-gateway 172.16.57.222

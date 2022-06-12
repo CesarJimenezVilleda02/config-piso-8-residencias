@@ -46,17 +46,17 @@ exit
 login block-for 30 attempts 2 within 120
 
 ! CONFIGURACIÓN DE DHCP
-ip dhcp excluded-address 172.16.59.253 172.16.59.254
+ip dhcp excluded-address 172.16.56.253 172.16.56.254
 ip dhcp pool Residentes
 network 172.16.56.0 255.255.255.0
-default-router 172.16.59.254
-dns-server 10.43.25.1
+default-router 172.16.56.254
+!dns-server 10.25.1.43
 
-ip dhcp excluded-address 172.16.59.125 172.16.59.126
+ip dhcp excluded-address 172.16.56.125 172.16.56.126
 ip dhcp pool Visitantes
 network 172.16.57.0 255.255.255.128
-default-router 172.16.59.126
-dns-server 10.43.25.1
+default-router 172.16.57.126
+!dns-server 10.25.1.43
 
 ! CONFIGURACIÓN DE INTERFACES
 int g0/0/0 
