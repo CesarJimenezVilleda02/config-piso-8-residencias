@@ -1,0 +1,3 @@
+---- Se ponen como troncales los puertos conectados al switch central?
+
+---- Se Se debe volver a poner toda la base de datos de la VLANs?

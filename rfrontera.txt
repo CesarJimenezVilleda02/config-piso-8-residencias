@@ -1,4 +1,7 @@
 enable
+
+clock set 13:00:00 Jun 2022
+
 config t
 
 hostname RFrontera
@@ -32,25 +35,30 @@ crypto key generate rsa
 
 ! CONFIGURACIÓN DE CONEXIONES
 line con 0
+exec-timeout 5 0
 login local
 logging sync
 
 line vty 0 4
+exec-timeout 5 0
 login local
 transport input ssh
+exit
+
+login block-for 30 attempts 2 within 120
 
 ! CONFIGURACIÓN DE DHCP
-ip dhcp excluded-address –.–.--.--
+ip dhcp excluded-address 172.16.59.253 172.16.59.254
 ip dhcp pool Residentes
 network 172.16.56.0 255.255.255.0
-default-router –.–.--.--
-dns-server –.–.--.--
+default-router 172.16.59.254
+dns-server 10.43.25.1
 
-ip dhcp excluded-address —.---.---.---
+ip dhcp excluded-address 172.16.59.125 172.16.59.126
 ip dhcp pool Visitantes
 network 172.16.57.0 255.255.255.128
-default-router —.---.---.---
-dns-server —.---.---.---
+default-router 172.16.59.126
+dns-server 10.43.25.1
 
 ! CONFIGURACIÓN DE INTERFACES
 int g0/0/0 
@@ -62,28 +70,32 @@ ip address 192.168.255.226 255.255.255.252
 no shut
 
 ! CONFIGURACION DE VLANS
+int G0/0/1.1
+description VLAN de Gestion
+encapsulation dot1q 1
+ip address 172.16.57.222 255.255.255.240
+
 int G0/0/1.100
 description VLAN de Residentes
 encapsulation dot1q 100
-ip address 172.16.56. 255.255.255.0
+ip address 172.16.56.254 255.255.255.0
 
 int G0/0/1.200
 description VLAN de Visitantes
 encapsulation dot1q 200
-ip address 172.16.57. 255.255.255.128
+ip address 172.16.57.126 255.255.255.128
 
 int G0/0/1.300
 description VLAN de IoT
 encapsulation dot1q 300
-ip address 172.16.57. 255.255.255.
+ip address 172.16.57.190 255.255.255.192
 
 int G0/0/1.400
 description VLAN de Seguridad
 encapsulation dot1q 400
-ip address 172.16.57. 255.255.255.240
+ip address 172.16.57.206 255.255.255.240
 
-
-int g0/1/0
+int g0/0/1
 no shut
 
 ! CONEXION A PROVEEDORES DE SERVICIO
