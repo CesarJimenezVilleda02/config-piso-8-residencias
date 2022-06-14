@@ -11,10 +11,11 @@ no ip domain-lookup
 
 ! USUARIOS PERMITIDOS
 username CIT privilege 15 secret tc2006B
-username soporte privilege 15 secret tc2006B
+username Admin01 privilege 15 secret tc2006B
+username Admin02 privilege 15 secret tc2006B
 
 ! CONFIGURACION SSH
-ip domain-name nuevasresidencias.com
+ip domain-name Residencias
 crypto key generate rsa
 
 line con 0
@@ -55,9 +56,14 @@ vlan 400
 name Seguridad
 
 ! Asignación de puertos de IoTSmoke
-int range f0/1-24, g0/1
+int range f0/1-24, g0/2
 switchport mode access
 switchport access vlan 300
+
+! Asignación del puerto TRUNK
+int range g0/1
+switchport mode trunk
+no shut
 
 int vlan 1
 desc Interfaz de VLAN Switch IoTSMoke

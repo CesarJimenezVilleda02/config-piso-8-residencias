@@ -1,21 +1,15 @@
-! ============================
-! ============ SResidentes============
-! ============================
-
 enable
-clock set 13:00:00 Jun 12 2022
+clock set 13:00:00 Jun 13 2022
 config t
-hostname SResidentes
+hostname S-ArenaBorrego
 
 no ip domain-lookup
 
 ! USUARIOS PERMITIDOS
-username CIT privilege 15 secret tc2006B
-username Admin01 privilege 15 secret tc2006B
-username Admin02 privilege 15 secret tc2006B
+username CIT privilege 15 secret ArenaBorrego
 
 ! CONFIGURACION SSH
-ip domain-name nuevasresidencias.com
+ip domain-name arenaborrego.com
 crypto key generate rsa
 
 line con 0
@@ -32,7 +26,7 @@ exit
 banner motd #
 ||===========================================||
 ||	       				                     ||
-|| Bienvenido al equipo SResidentes          ||
+|| Bienvenido al equipo S-ArenaBorrego       ||
 ||     					                     ||
 ||					                         ||
 || Estas entrando a un equipo protegido.     ||
@@ -46,28 +40,46 @@ banner motd #
 #
 
 ! Asignación de nombre a VLANs
-vlan 100
-name Residentes
-vlan 200
-name Visitantes
-vlan 300
-name IoT
-vlan 400
-name Seguridad
+vlan 110
+name BlueZone
+vlan 410
+name RedZone
+vlan 98
+name Espectadores
+vlan 555
+name Caster
+vlan 133
+name Gestión
 
-! Asignación de puertos de Residentes
-int range f0/1-24, g0/2
+! Asignación de puertos a BlueZone
+int range f0/1-9
 switchport mode access
-switchport access vlan 100
+switchport access vlan 110
+
+! Asignación de puertos a RedZone
+int range f0/10-18
+switchport mode access
+switchport access vlan 410
+
+! Asignación de puertos a Espectadores
+int g0/2
+switchport mode access
+switchport access vlan 98
+
+! Asignación de puertos a Caster
+int range f0/20-24
+switchport mode access
+switchport access vlan 555
 
 ! Asignación del puerto TRUNK
-int range g0/1
+int g0/1
 switchport mode trunk
 no shut
 
-int vlan 1
-desc Interfaz de VLAN Switch Residentes
-ip address 172.16.57.220 255.255.255.240
+! Configuración de VLAN 1 
+int vlan 133
+desc Interfaz de Vlan de S-ArenaBorregos
+ip address 192.168.80.105 255.255.255.248
 no shut
 
-ip default-gateway 172.16.56.254
+ip default-gateway 192.168.80.110

@@ -11,10 +11,11 @@ no ip domain-lookup
 
 ! USUARIOS PERMITIDOS
 username CIT privilege 15 secret tc2006B
-username soporte privilege 15 secret tc2006B
+username Admin01 privilege 15 secret tc2006B
+username Admin02 privilege 15 secret tc2006B
 
 ! CONFIGURACION SSH
-ip domain-name nuevasresidencias.com
+ip domain-name Residencias
 crypto key generate rsa
 
 line con 0
@@ -75,7 +76,7 @@ switchport mode access
 switchport access vlan 400
 
 ! Asignación del puerto TRUNK
-int g0/1
+int range g0/1, f0/1, f0/7, f0/13, f0/15, f0/17, f0/19
 switchport mode trunk
 no shut
 
