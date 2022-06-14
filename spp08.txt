@@ -56,7 +56,7 @@ vlan 400
 name Seguridad
 
 ! Asignación de puertos a VLAN Residentes
-int range f0/1-6, g0/2
+int range f0/1-6
 switchport mode access
 switchport access vlan 100
 
@@ -76,7 +76,7 @@ switchport mode access
 switchport access vlan 400
 
 ! Asignación del puerto TRUNK
-int range g0/1, f0/1, f0/7, f0/13, f0/15, f0/17, f0/19
+int range g0/1, g0/2, f0/1, f0/7, f0/13, f0/15, f0/17, f0/19
 switchport mode trunk
 no shut
 
