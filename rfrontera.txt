@@ -25,10 +25,11 @@ banner motd #
 
 ! USUARIOS PERMITIDOS
 username CIT privilege 15 secret tc2006B
-username soporte privilege 15 secret tc2006B
+username Admin01 privilege 15 secret tc2006B
+username Admin02 privilege 15 secret tc2006B
 
 ! CONFIGURACION SSH
-ip domain-name nuevasresidencias.com
+ip domain-name Residencias
 crypto key generate rsa
 
 ! CONFIGURACIÓN DE CONEXIONES
