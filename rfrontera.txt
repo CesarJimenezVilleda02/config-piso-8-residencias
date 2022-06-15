@@ -8,19 +8,19 @@ no ip domain-lookup
 
 ! CONFIGURACIÓN DE BANNER
 banner motd #
-||===========================================||
-||	       				                     ||
-|| Bienvenido al equipo RFrontera            ||
-||     					                     ||
-||					                         ||
-|| Estas entrando a un equipo protegido.     ||
-||     					                     ||
-|| Si decides continuar puedes ser sujeto    ||
-|| a investigación.	       		             ||
-||		       			                     ||
-|| atte. soporteti@tec.mx              	     ||
-||	       				                     ||
-||===========================================||
+===========================================
+	       				                     
+ Bienvenido al equipo RFrontera            
+     					                     
+					                         
+ Estas entrando a un equipo protegido.     
+     					                     
+ Si decides continuar puedes ser sujeto    
+ a investigación.	       		             
+		       			                     
+ atte. soporteti@tec.mx              	     
+	       				                     
+===========================================
 #
 
 ! USUARIOS PERMITIDOS

@@ -31,19 +31,19 @@ logging sync
 exit
 
 banner motd #
-||===========================================||
-||	       				                     ||
-|| Bienvenido al equipo SIoTMultimedia       ||
-||     					                     ||
-||					                         ||
-|| Estas entrando a un equipo protegido.     ||
-||     					                     ||
-|| Si decides continuar puedes ser sujeto    ||
-|| a investigación.	       		             ||
-||		       			                     ||
-|| atte. soporteti@tec.mx              	     ||
-||	       				                     ||
-||===========================================||0
+===========================================
+	       				                     
+ Bienvenido al equipo SIoTMultimedia       
+     					                     
+					                         
+ Estas entrando a un equipo protegido.     
+     					                     
+ Si decides continuar puedes ser sujeto    
+ a investigación.	       		             
+		       			                     
+ atte. soporteti@tec.mx              	     
+	       				                     
+===========================================
 #
 
 ! Asignación de nombre a VLANs
