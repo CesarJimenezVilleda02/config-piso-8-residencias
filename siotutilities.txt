@@ -15,7 +15,7 @@ username Admin01 privilege 15 secret tc2006B
 username Admin02 privilege 15 secret tc2006B
 
 ! CONFIGURACION SSH
-ip domain-name nuevasresidencias.com
+ip domain-name Residencias
 crypto key generate rsa
 
 line con 0
