@@ -26,6 +26,7 @@ logging sync
 line vty 0 15
 exec-timeout 5 0
 login local
+transport input ssh
 logging sync
 exit
 
