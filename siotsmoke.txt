@@ -62,6 +62,7 @@ switchport access vlan 300
 
 ! Asignación del puerto TRUNK
 int range g0/1
+desc Interfaz TRUNK de SIoTSmokes
 switchport mode trunk
 no shut
 

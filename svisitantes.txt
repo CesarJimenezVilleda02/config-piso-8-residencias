@@ -62,6 +62,7 @@ switchport access vlan 200
 
 ! Asignación del puerto TRUNK
 int range g0/1
+desc Interfaz TRUNK de SVisitantes
 switchport mode trunk
 no shut
 

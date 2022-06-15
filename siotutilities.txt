@@ -60,7 +60,9 @@ int range f0/1-24, g0/2
 switchport mode access
 switchport access vlan 300
 
+! Asignación del puerto TRUNK
 int g0/1
+desc Interfaz TRUNK de SIoTUtilities
 switchport mode trunk
 no shut
 

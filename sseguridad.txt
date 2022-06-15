@@ -62,6 +62,7 @@ switchport access vlan 400
 
 ! Asignación del puerto TRUNK
 int range g0/1
+desc Interfaz TRUNK de SSeguridad
 switchport mode trunk
 no shut
 
