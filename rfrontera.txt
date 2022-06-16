@@ -29,7 +29,7 @@ username Admin01 privilege 15 secret tc2006B
 username Admin02 privilege 15 secret tc2006B
 
 ! CONFIGURACION SSH
-ip domain-name Residencias
+ip domain-name Residencias.com
 crypto key generate rsa
 
 ! CONFIGURACIÓN DE CONEXIONES
